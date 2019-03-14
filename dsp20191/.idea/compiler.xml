@@ -6,11 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="UFG_DSP_20191_201609824_SAULO-CALIXTO" />
+        <module name="dsp20191" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="UFG_DSP_20191_201609824_SAULO-CALIXTO" target="1.5" />
-    </bytecodeTargetLevel>
   </component>
 </project>

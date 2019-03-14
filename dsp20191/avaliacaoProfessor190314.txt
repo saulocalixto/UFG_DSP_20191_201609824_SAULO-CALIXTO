@@ -1,0 +1,20 @@
+O código não rodou. Disparou a seguinte exceção:
+
+Problem writing to the file statsTest.txt
+Exception in thread "main" java.io.FileNotFoundException: src/main/resources/texto.txt (No such file or directory)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.io.FileReader.<init>(FileReader.java:72)
+	at br.com.saulocalixto.dsp20191.aulas0104.ap.LeitorArquivo.main(LeitorArquivo.java:15)
+
+O problema é que nem o arquivo e nem o diretório especificados por "src/main/resources/texto.txt" não existiam. Desta forma não cumpriu o primeiro requisito (criar o arquivo).
+
+Criei manualmente e funcionou. Mas é para ser criado pela classe Java.
+
+adicionei o seguite trecho de código:
+if(!statText.exists())
+  statText.createNewFile();
+Se o arquivo não existir, a classe java o cria.
+
+

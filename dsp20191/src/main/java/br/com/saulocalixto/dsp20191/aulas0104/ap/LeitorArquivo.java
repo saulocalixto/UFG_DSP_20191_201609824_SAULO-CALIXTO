@@ -1,3 +1,5 @@
+package br.com.saulocalixto.dsp20191.aulas0104.ap;
+
 import java.io.*;
 
 /**
@@ -21,6 +23,8 @@ public class LeitorArquivo {
     public static void criarArquivo() {
         try {
             File statText = new File("src/main/resources/texto.txt");
+            if(!statText.exists())
+                statText.createNewFile();
             FileOutputStream is = new FileOutputStream(statText);
             OutputStreamWriter osw = new OutputStreamWriter(is);
             Writer w = new BufferedWriter(osw);
