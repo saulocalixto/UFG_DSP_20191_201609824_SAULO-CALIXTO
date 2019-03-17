@@ -18,3 +18,19 @@ if(!statText.exists())
 Se o arquivo não existir, a classe java o cria.
 
 
+Resposta:
+
+Professor, só daria erro se a pasta "resources" não existisse. O arquivo é criado independente dele existir ou não. Testei aqui em casa e estava funcionando normal, consegui simular o erro deletando a pasta resources. O trecho de código que o senhor adicionou não resolveria o problema da falta do relatório.
+
+Adicionou o seguinte trecho de código para resolver o problema:
+
+String PATH = "src/main/";
+            String pathDoArquivo = PATH.concat("resources");
+            File diretorioDoArquivo = new File(pathDoArquivo);
+
+            if (!diretorioDoArquivo.exists()){
+                diretorioDoArquivo.mkdir();
+            }
+
+            File texto = new File(pathDoArquivo.concat("/texto.txt"));
+
