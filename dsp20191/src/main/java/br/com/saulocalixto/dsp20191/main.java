@@ -1,6 +1,6 @@
-package br.com.saulocalixto.dsp20191.aulas0104.ap;
+package br.com.saulocalixto.dsp20191;
 
-import br.com.saulocalixto.dsp20191.aulas0104.ap.view.MenuView;
+import br.com.saulocalixto.dsp20191.view.MenuView;
 
 /**
  * Created by Saulo Calixto on 13/03/19.

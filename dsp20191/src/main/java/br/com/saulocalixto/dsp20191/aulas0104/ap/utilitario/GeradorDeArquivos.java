@@ -1,15 +1,13 @@
 package br.com.saulocalixto.dsp20191.aulas0104.ap.utilitario;
 
+import br.com.saulocalixto.dsp20191.utilitario.GeradorDeArquivoPadrao;
+
 import java.io.*;
 
-public class GeradorDeArquivos {
-
-    private String pathArquivo;
-    private String nomeArquivo;
+public class GeradorDeArquivos extends GeradorDeArquivoPadrao {
 
     public GeradorDeArquivos(String pathArquivo, String nomeArquivo) {
-        this.pathArquivo = pathArquivo;
-        this.nomeArquivo = nomeArquivo;
+        super(pathArquivo, nomeArquivo);
     }
 
     public void crieArquivoDeTexto() {
@@ -22,27 +20,20 @@ public class GeradorDeArquivos {
 
         for (String linha:linhas) {
             if(linha != null) {
-                arquivo.println(linha);
+                arquivo.print(linha);
+                arquivo.println();
             }
         }
 
+        arquivo.flush();
         arquivo.close();
-    }
-
-    private void CrieDiretorio(String pathArquivo) {
-        File diretorioDoArquivo = new File(pathArquivo);
-
-        if (!diretorioDoArquivo.exists()){
-            diretorioDoArquivo.mkdir();
-        }
     }
 
     private PrintWriter pegueArquivo() {
         try {
-            CrieDiretorio(pathArquivo);
+            CrieDiretorio();
             FileWriter caminheCompleto = new FileWriter(pathArquivo.concat("/" + nomeArquivo), true);
             PrintWriter arquivo = new PrintWriter(caminheCompleto);
-
             return arquivo;
         } catch (IOException e) {
             System.out.println("Problema na leitura do arquivo, caminho ou arquivo inexistente.");
