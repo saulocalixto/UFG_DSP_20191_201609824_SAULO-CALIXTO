@@ -1,12 +1,22 @@
 package br.com.saulocalixto.dsp20191;
 
+import br.com.saulocalixto.dsp20191.aulas1316.ap.Persistencia.Base.PersistenciaJdbc;
+import br.com.saulocalixto.dsp20191.aulas1316.ap.Persistencia.ddl.criacao.CriadorDeTabela;
+import br.com.saulocalixto.dsp20191.aulas1316.ap.Persistencia.ddl.criacao.CriadorDeTabelaCargos;
+import br.com.saulocalixto.dsp20191.aulas1316.ap.Persistencia.ddl.criacao.CriadorDeTabelaDepartamentos;
+import br.com.saulocalixto.dsp20191.aulas1316.ap.Persistencia.ddl.criacao.CriadorDeTabelaFuncionarios;
 import br.com.saulocalixto.dsp20191.view.MenuView;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Saulo Calixto on 13/03/19.
  */
 public class main {
-    public static void main (String args[]) {
+    public static void main (String args[]) throws Exception {
+       
+        CriaTabelas();
+        
         /**
          * Criei um menu para a aplicação.
          * Se escolher a opção 1 você poderá criar um arquivo e adicionar linhas a esse arquivo.
@@ -19,5 +29,15 @@ public class main {
         MenuView menu = new MenuView();
         menu.executeMenu();
 
+    }
+    
+    public static void CriaTabelas() {
+        List<CriadorDeTabela> tabelas = new ArrayList<>();
+        
+        tabelas.add(new CriadorDeTabelaCargos());
+        tabelas.add(new CriadorDeTabelaDepartamentos());
+        tabelas.add(new CriadorDeTabelaFuncionarios());
+        
+        tabelas.stream().forEach(x -> x.criaTabela());
     }
 }

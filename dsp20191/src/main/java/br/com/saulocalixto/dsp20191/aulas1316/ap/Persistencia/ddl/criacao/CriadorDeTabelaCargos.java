@@ -7,8 +7,8 @@ public class CriadorDeTabelaCargos extends CriadorDeTabela {
     @Override
     public String ScriptDeCriacaoDaTabela() {
         return "CREATE TABLE IF NOT EXISTS CARGOS(\n" +
-                "ID_DEPARTAMENTO VARCHAR(100) NOT NULL PRIMARY KEY,\n" +
-                "SALARIO FLOAT NOT NULL\n" +
+                "ID_CARGO LONG NOT NULL PRIMARY KEY,\n" +
+                "SALARIO FLOAT NOT NULL,\n" +
                 "NOME VARCHAR(100) NOT NULL\n" +
                 ")";
     }

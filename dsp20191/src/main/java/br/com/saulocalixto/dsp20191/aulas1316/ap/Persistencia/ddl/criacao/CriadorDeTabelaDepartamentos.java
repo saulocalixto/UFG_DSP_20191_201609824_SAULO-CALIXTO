@@ -8,7 +8,7 @@ public class CriadorDeTabelaDepartamentos extends CriadorDeTabela {
     @Override
     public String ScriptDeCriacaoDaTabela() {
         return "CREATE TABLE IF NOT EXISTS DEPARTAMENTOS(\n" +
-                "ID_DEPARTAMENTO VARCHAR(100) NOT NULL PRIMARY KEY,\n" +
+                "ID_DEPARTAMENTO LONG NOT NULL PRIMARY KEY,\n" +
                 "NOME VARCHAR(100) NOT NULL\n" +
                 ")";
     }

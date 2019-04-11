@@ -11,4 +11,5 @@ public class Lotacao {
     private Date dataFinal;
     private Cargo cargo;
     private Departamento departamento;
+    private Funcionario funcionario;
 }

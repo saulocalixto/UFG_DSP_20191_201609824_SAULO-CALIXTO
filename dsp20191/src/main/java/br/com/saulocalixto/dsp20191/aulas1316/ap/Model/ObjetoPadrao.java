@@ -4,14 +4,14 @@ package br.com.saulocalixto.dsp20191.aulas1316.ap.Model;
  * Created by aluno on 03/04/19.
  */
 public class ObjetoPadrao {
-    private String id;
+    private long id;
     private String nome;
 
-    public String getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(long id) {
         this.id = id;
     }
 
