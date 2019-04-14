@@ -6,27 +6,28 @@
 package br.com.saulocalixto.dsp20191.aulas1316.ap.Persistencia.dml.insert;
 
 import br.com.saulocalixto.dsp20191.aulas1316.ap.Model.Departamento;
+import br.com.saulocalixto.dsp20191.aulas1316.ap.Persistencia.dml.ManipulacaoBdPadrao;
 
 /**
  *
  * @author Alunoinf_2
  */
-public class PersisteDepartamento extends PersistePadrao<Departamento> {
+public class PersisteDepartamento extends ManipulacaoBdPadrao<Departamento> {
 
     public PersisteDepartamento(Departamento objeto) {
         super(objeto);
     }
    
     @Override
-    String stringInsert() {
+    protected String comandoSqlParaExecutar() {
         return "INSERT INTO " + nomeTabela()  +
-                "VALUES('" + objeto.getId() +
+                " VALUES('" + objeto.getId() +
                 "','" + objeto.getNome() +
                 "')";
     }
 
     @Override
-    String nomeTabela() {
+    protected String nomeTabela() {
         return "DEPARTAMENTOS";
     }
     

@@ -3,6 +3,7 @@ package br.com.saulocalixto.dsp20191.view;
 import br.com.saulocalixto.dsp20191.aulas0104.ap.view.CriarArquivoView;
 import br.com.saulocalixto.dsp20191.aulas0104.ap.view.LeitorDeArquivoView;
 import br.com.saulocalixto.dsp20191.aulas0508.view.AlunoView;
+import br.com.saulocalixto.dsp20191.aulas1316.ap.view.GestaoDeFuncionariosView;
 
 import java.util.Scanner;
 
@@ -18,6 +19,7 @@ public class MenuView extends MenuPadrao {
             System.out.println("2 - Adicionar linhas a arquivo existente");
             System.out.println("3 - Imprimir conteúdo de arquivo");
             System.out.println("4 - Gestão de notas");
+            System.out.println("5 - Gestão de Funcionários");
             System.out.println("0 - Sair");
 
             escolha = leitor().nextInt();
@@ -32,6 +34,7 @@ public class MenuView extends MenuPadrao {
         CriarArquivoView criarArquivo = new CriarArquivoView();
         LeitorDeArquivoView leitorArquivo = new LeitorDeArquivoView();
         AlunoView alunoView = new AlunoView();
+        GestaoDeFuncionariosView gestorFuncionariosView = new GestaoDeFuncionariosView();
         switch (escolha) {
             case 1:
                 criarArquivo.executeMenuCriarArquivo();
@@ -44,6 +47,9 @@ public class MenuView extends MenuPadrao {
                 break;
             case 4:
                 alunoView.acoesMenu();
+                break;
+            case 5:
+                gestorFuncionariosView.acoesMenu();
                 break;
         }
     }

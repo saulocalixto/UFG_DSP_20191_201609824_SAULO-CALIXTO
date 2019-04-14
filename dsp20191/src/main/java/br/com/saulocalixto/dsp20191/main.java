@@ -1,10 +1,17 @@
 package br.com.saulocalixto.dsp20191;
 
+import br.com.saulocalixto.dsp20191.aulas1316.ap.Model.Departamento;
 import br.com.saulocalixto.dsp20191.aulas1316.ap.Persistencia.Base.PersistenciaJdbc;
 import br.com.saulocalixto.dsp20191.aulas1316.ap.Persistencia.ddl.criacao.CriadorDeTabela;
 import br.com.saulocalixto.dsp20191.aulas1316.ap.Persistencia.ddl.criacao.CriadorDeTabelaCargos;
 import br.com.saulocalixto.dsp20191.aulas1316.ap.Persistencia.ddl.criacao.CriadorDeTabelaDepartamentos;
 import br.com.saulocalixto.dsp20191.aulas1316.ap.Persistencia.ddl.criacao.CriadorDeTabelaFuncionarios;
+import br.com.saulocalixto.dsp20191.aulas1316.ap.Persistencia.dml.ManipulacaoBdPadrao;
+import br.com.saulocalixto.dsp20191.aulas1316.ap.Persistencia.dml.alteracao.AlteraDepartamento;
+import br.com.saulocalixto.dsp20191.aulas1316.ap.Persistencia.dml.consulte.ConsulteDepartamento;
+import br.com.saulocalixto.dsp20191.aulas1316.ap.Persistencia.dml.consulte.ConsultePadrao;
+import br.com.saulocalixto.dsp20191.aulas1316.ap.Persistencia.dml.delete.DeleteDepartamento;
+import br.com.saulocalixto.dsp20191.aulas1316.ap.Persistencia.dml.insert.PersisteDepartamento;
 import br.com.saulocalixto.dsp20191.view.MenuView;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,9 +20,7 @@ import java.util.List;
  * Created by Saulo Calixto on 13/03/19.
  */
 public class main {
-    public static void main (String args[]) throws Exception {
-       
-        CriaTabelas();
+    public static void main (String args[]) {
         
         /**
          * Criei um menu para a aplicação.
@@ -29,15 +34,5 @@ public class main {
         MenuView menu = new MenuView();
         menu.executeMenu();
 
-    }
-    
-    public static void CriaTabelas() {
-        List<CriadorDeTabela> tabelas = new ArrayList<>();
-        
-        tabelas.add(new CriadorDeTabelaCargos());
-        tabelas.add(new CriadorDeTabelaDepartamentos());
-        tabelas.add(new CriadorDeTabelaFuncionarios());
-        
-        tabelas.stream().forEach(x -> x.criaTabela());
     }
 }
