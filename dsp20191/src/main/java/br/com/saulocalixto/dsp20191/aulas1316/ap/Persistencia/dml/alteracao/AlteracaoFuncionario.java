@@ -13,7 +13,7 @@ public class AlteracaoFuncionario extends ManipulacaoBdPadrao<Funcionario> {
     protected String comandoSqlParaExecutar() {
         return "UPDATE FUNCIONARIO\n"
                 + "SET MATRICULA = '" + objeto.getMatricula() + "',"
-                + "SET NOME = '" + objeto.getNome() + "'\n"
+                + "NOME = '" + objeto.getNome() + "'\n"
                 + "WHERE ID_FUNCIONARIO = " + objeto.getId();
     }
 

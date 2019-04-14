@@ -18,19 +18,23 @@ public abstract class ConsultePadrao<T> extends PersistenciaJdbc {
             PreparedStatement pstmt = connection.prepareStatement(sql);
             pstmt.setLong(1,id);
 
-            ResultSet rs = pstmt.executeQuery();
-
-            preencheObjeto(rs);
-
-            rs.close();
-            pstmt.close();
-            stmt.close();
-            connection.close();
+            ExecuteEFecheConexao(pstmt);
         } catch (SQLException e) {
             System.err.println("Ocorreu um erro ao rodar o script: " + e.getMessage());
         } finally {
             return objeto;
         }
+    }
+
+    protected void ExecuteEFecheConexao(PreparedStatement pstmt) throws SQLException {
+        ResultSet rs = pstmt.executeQuery();
+
+        preencheObjeto(rs);
+
+        rs.close();
+        pstmt.close();
+        stmt.close();
+        connection.close();
     }
 
     protected abstract String comandoSqlParaExecutar();

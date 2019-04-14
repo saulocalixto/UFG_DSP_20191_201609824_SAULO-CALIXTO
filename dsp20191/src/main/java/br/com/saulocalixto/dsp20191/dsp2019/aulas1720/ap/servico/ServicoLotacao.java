@@ -10,7 +10,14 @@ import br.com.saulocalixto.dsp20191.aulas1316.ap.Persistencia.dml.consulte.Consu
 import br.com.saulocalixto.dsp20191.aulas1316.ap.Persistencia.dml.delete.DeleteLotacao;
 import br.com.saulocalixto.dsp20191.aulas1316.ap.Persistencia.dml.insert.PersisteLotacao;
 
+import java.util.List;
+
 public class ServicoLotacao extends ServicoPadrao<Lotacao> {
+
+    public List<Lotacao> consultePorCargoEDepartamento(long idCargo, long idDepartamento) {
+        return (new ConsulteLotacao()).consultaPorCargoEDepartamento(idCargo, idDepartamento);
+    }
+
     @Override
     protected CriadorDeTabela retorneCriadorDaTabela() {
         return new CriadorDeTabelaLotacao();

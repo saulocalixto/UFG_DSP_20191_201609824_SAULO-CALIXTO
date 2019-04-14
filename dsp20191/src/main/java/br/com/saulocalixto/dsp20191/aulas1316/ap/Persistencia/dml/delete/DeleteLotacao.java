@@ -10,7 +10,7 @@ public class DeleteLotacao extends ManipulacaoBdPadrao<Lotacao> {
 
     @Override
     protected String comandoSqlParaExecutar() {
-        return "DELETE FROM " + nomeTabela() + " WHERE ID_LOTACAO = " + objeto.getId();
+        return "DELETE FROM " + nomeTabela() + " WHERE ID_LOTACOES = " + objeto.getId();
     }
 
     @Override

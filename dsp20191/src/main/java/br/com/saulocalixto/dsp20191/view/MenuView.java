@@ -3,9 +3,7 @@ package br.com.saulocalixto.dsp20191.view;
 import br.com.saulocalixto.dsp20191.aulas0104.ap.view.CriarArquivoView;
 import br.com.saulocalixto.dsp20191.aulas0104.ap.view.LeitorDeArquivoView;
 import br.com.saulocalixto.dsp20191.aulas0508.view.AlunoView;
-import br.com.saulocalixto.dsp20191.aulas1316.ap.view.GestaoDeFuncionariosView;
-
-import java.util.Scanner;
+import br.com.saulocalixto.dsp20191.dsp2019.aulas1720.ap.view.GestaoDeFuncionariosView;
 
 public class MenuView extends MenuPadrao {
 

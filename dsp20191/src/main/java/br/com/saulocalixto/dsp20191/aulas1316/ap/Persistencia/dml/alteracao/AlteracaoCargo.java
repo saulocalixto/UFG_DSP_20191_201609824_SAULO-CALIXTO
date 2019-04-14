@@ -11,8 +11,8 @@ public class AlteracaoCargo extends ManipulacaoBdPadrao<Cargo> {
     @Override
     protected String comandoSqlParaExecutar() {
         return "UPDATE CARGOS\n"
-                + "SET NOME = '" + objeto.getNome() + "'\n"
-                + "SET SALARIO = '" + objeto.getSalario() + "'\n"
+                + "SET NOME = '" + objeto.getNome() + "',\n"
+                + "SALARIO = " + objeto.getSalario() + "\n"
                 + "WHERE ID_CARGO = " + objeto.getId();
     }
 

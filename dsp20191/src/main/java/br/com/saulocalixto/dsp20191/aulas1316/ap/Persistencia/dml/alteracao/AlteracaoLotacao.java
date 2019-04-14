@@ -12,10 +12,10 @@ public class AlteracaoLotacao extends ManipulacaoBdPadrao<Lotacao> {
     protected String comandoSqlParaExecutar() {
         return "UPDATE LOTACOES\n"
                 + "SET DATAINICIAL = '" + objeto.getDataInicial() + "',\n"
-                + "SET DATAFINAL = '" + objeto.getDataFinal() + "',\n"
-                + "SET ID_CARGO = " + objeto.getCargo().getId() + ",\n"
-                + "SET ID_DEPARTAMENTO = " + objeto.getDepartamento().getId() + ",\n"
-                + "SET ID_FUNCIONARIO = " + objeto.getFuncionario().getId() + "\n"
+                + "DATAFINAL = '" + objeto.getDataFinal() + "',\n"
+                + "ID_CARGO = " + objeto.getCargo().getId() + ",\n"
+                + "ID_DEPARTAMENTO = " + objeto.getDepartamento().getId() + ",\n"
+                + "ID_FUNCIONARIO = " + objeto.getFuncionario().getId() + "\n"
                 + "WHERE ID_LOTACOES = " + objeto.getId();
     }
 
