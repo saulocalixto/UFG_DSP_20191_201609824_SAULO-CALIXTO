@@ -15,5 +15,6 @@ public interface RepositorioVeiculo {
     void criar(Veiculo objeto);
     Veiculo consulte(Long id);
     void atualize(Veiculo objeto);
-    void apague(Long id);
+    void apague(Veiculo objeto);
+    void close();
 }

@@ -16,7 +16,7 @@ import javax.persistence.Persistence;
  */
 public class RepositorioVeiculoImpl implements RepositorioVeiculo {
     
-    private EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.github.saulocalixto.aula2528");
+    private EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.github.saulocalixto.aula2528jpa");
     private EntityManager em;
     
     public RepositorioVeiculoImpl(){
@@ -46,9 +46,9 @@ public class RepositorioVeiculoImpl implements RepositorioVeiculo {
     }
 
     @Override
-    public void apague(Long id) {
+    public void apague(Veiculo objeto) {
         em.getTransaction().begin();
-        em.remove(id);
+        em.remove(objeto);
         em.getTransaction().commit();
     }
     
